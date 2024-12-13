@@ -12,9 +12,13 @@ type NoInputTransformOptions = Omit<
 
 export type CompilerOptions = NoInputTransformOptions & {
   /**
-   * Whether or not to run the Lightning CSS transformations.
+   * Whether or not to run the Lightning CSS transformations. By default, the transforms are enabled.
    */
   disableTransforms?: boolean;
+  /**
+   * Whether or not to run Lightning CSS transforms twice like Tailwind does. By default, Lightning CSS transforms are run only once.
+   */
+  transformTwice?: boolean;
 };
 
 /**

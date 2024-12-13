@@ -11,7 +11,7 @@ const defaultInput = String.raw`
 @import "tailwindcss";
 `;
 
-/** @type {import("./index.d.ts").NoInputTransformOptions} */
+/** @type {import("./index.d.ts").CompilerOptions} */
 const defaultOptions = {
   minify: false,
   sourceMap: false,
@@ -58,11 +58,14 @@ async function handleError(fn) {
 
 /**
  * @param {string} input
- * @param {Omit<import("lightningcss").TransformOptions, "code">} options
+ * @param {import("./index.d.ts").CompilerOptions & { filename: string }} options
  *
  * @returns {string} The optimized CSS.
  */
 function optimizeCSS(input, options) {
+  const transformTwice = options.transformTwice;
+  delete options.transformTwice;
+
   /**
    * @param {Buffer | Uint8Array} code
    */
@@ -73,9 +76,13 @@ function optimizeCSS(input, options) {
     }).code;
   }
 
-  // Running Lightning CSS twice to ensure that adjacent rules are merged after
-  // nesting is applied. This creates a more optimized output.
-  return optimize(optimize(Buffer.from(input))).toString();
+  if (transformTwice) {
+    // Running Lightning CSS twice to ensure that adjacent rules are merged after
+    // nesting is applied. This creates a more optimized output.
+    return optimize(optimize(Buffer.from(input))).toString();
+  }
+
+  return optimize(Buffer.from(input)).toString();
 }
 
 /** @type {import("./index.d.ts").handle} */

@@ -8,6 +8,16 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- Compiler option for explicitly running the Lightning CSS transforms twice. The
+  default behavior is now to run them only once.
+
+### Changed
+
+- Lightning CSS transforms to run only once by default. They were run twice
+  before to mimic Tailwind’s tools’ behavior.
+
 ## [0.1.1] - 2024-12-13
 
 ### Fixed
