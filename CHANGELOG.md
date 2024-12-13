@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.2.0] - 2024-12-14
+
 ### Added
 
 - Compiler option for explicitly running the Lightning CSS transforms twice. The
@@ -31,7 +33,9 @@ and this project adheres to
   files.
 
 [unreleased]:
-  https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.1.1...HEAD
+  https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.2.0...HEAD
+[0.2.0]:
+  https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.1.1...v0.2.0
 [0.1.1]:
   https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.1.0...v0.1.1
 [0.1.0]:
