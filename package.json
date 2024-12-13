@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-node-compiler",
-  "version": "0.1.0",
+  "version": "0.1.1-dev",
   "description": "",
   "homepage": "https://github.com/anttikivi/tailwindcss-node-compiler#readme",
   "bugs": {
@@ -13,11 +13,11 @@
   "license": "MIT",
   "author": "Antti Kivi <antti@anttikivi.fi> (https://www.anttikivi.fi)",
   "type": "module",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "files": [
-    "src/index.js",
-    "src/index.d.ts"
+    "index.js",
+    "index.d.ts"
   ],
   "scripts": {
     "lint": "tsc && eslint ."
