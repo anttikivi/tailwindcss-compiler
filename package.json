@@ -2,7 +2,14 @@
   "name": "@anttikivi/tailwindcss-compiler",
   "version": "0.1.0-dev",
   "description": "",
-  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "src/index.d.ts",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">= 18.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/anttikivi/tailwindcss-compiler/issues"
   },
-  "homepage": "https://github.com/anttikivi/tailwindcss-compiler#readme"
+  "files": [
+    "src/*.js",
+    "src/*.d.ts"
+  ],
+  "homepage": "https://github.com/anttikivi/tailwindcss-compiler#readme",
+  "dependencies": {
+    "@tailwindcss/node": "^4.0.0-beta.6",
+    "@tailwindcss/oxide": "^4.0.0-beta.6",
+    "lightningcss": "^1.28.2"
+  }
 }
