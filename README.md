@@ -1,6 +1,6 @@
-# Tailwind CSS Compiler
+# Tailwind CSS Compiler for Node.js
 
-`@anttikivi/tailwindcss-compiler` is a compiler for
+`tailwindcss-node-compiler` is a compiler for
 [Tailwind CSS](https://tailwindcss.com) v4 and up. The compiler wraps the
 `@tailwindcss/node` package in a simple Node.js API and, thus, the compiler
 should be used through this API. The compiler uses

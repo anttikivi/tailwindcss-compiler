@@ -1,14 +1,14 @@
 {
-  "name": "@anttikivi/tailwindcss-compiler",
+  "name": "tailwindcss-node-compiler",
   "version": "0.1.0-dev",
   "description": "",
-  "homepage": "https://github.com/anttikivi/tailwindcss-compiler#readme",
+  "homepage": "https://github.com/anttikivi/tailwindcss-node-compiler#readme",
   "bugs": {
-    "url": "https://github.com/anttikivi/tailwindcss-compiler/issues"
+    "url": "https://github.com/anttikivi/tailwindcss-node-compiler/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anttikivi/tailwindcss-compiler.git"
+    "url": "git+https://github.com/anttikivi/tailwindcss-node-compiler.git"
   },
   "license": "MIT",
   "author": "Antti Kivi <antti@anttikivi.fi> (https://www.anttikivi.fi)",
