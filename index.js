@@ -7,21 +7,7 @@ import { Features, transform } from "lightningcss";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-/**
- * @typedef {Omit<import("lightningcss").TransformOptions, "filename" | "code">} NoInputTransformOptions
- */
-
-/**
- * @typedef {NoInputTransformOptions & { disableTransforms: boolean? }} CompilerOptions
- */
-
-/**
- * @typedef {object} Previous
- * @property {string} css
- * @property {string} optimizedCSS
- */
-
-/** @type {NoInputTransformOptions} */
+/** @type {import("./index.d.ts").NoInputTransformOptions} */
 const defaultOptions = {
   minify: false,
   sourceMap: false,
@@ -45,7 +31,7 @@ const defaultOptions = {
 /**
  * @param {string} value
  */
-export function eprintln(value = "") {
+function eprintln(value = "") {
   process.stderr.write(`${value}\n`);
 }
 
@@ -88,15 +74,7 @@ async function optimizeCSS(input, options) {
   return optimize(optimize(Buffer.from(input))).toString();
 }
 
-/**
- * Compiles a CSS file with Tailwind and optionally transforms it using LightningCSS.
- *
- * @param {string} inputFile Path to the input file.
- * @param {string | undefined} basePath An optional base path for the Tailwind compiler. If it is not set, the current working directory will be used.
- * @param {?CompilerOptions} options Option to pass to LightningCSS.
- *
- * @returns {Promise<string>} The compiled CSS code.
- */
+/** @type {import("./index.d.ts").compileTailwind} */
 export default async function compileTailwind(inputFile, basePath, options) {
   let base = basePath || process.cwd();
 
@@ -106,7 +84,7 @@ export default async function compileTailwind(inputFile, basePath, options) {
         @import "tailwindcss";
       `;
 
-  /** @type {Previous} */
+  /** @type {import("./index.d.ts").Previous} */
   let previous = {
     css: "",
     optimizedCSS: "",
