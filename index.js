@@ -22,12 +22,12 @@ const defaultOptions = {
     deepSelectorCombinator: true,
   },
   include: Features.Nesting,
-  exclude: Features.LogicalProperties,
+  exclude: Features.LogicalProperties | Features.DirSelector,
   targets: {
     safari: (16 << 16) | (4 << 8),
     ios_saf: (16 << 16) | (4 << 8),
     firefox: 128 << 16,
-    chrome: 120 << 16,
+    chrome: 111 << 16,
   },
   errorRecovery: true,
 };
@@ -60,9 +60,9 @@ async function handleError(fn) {
  * @param {string} input
  * @param {Omit<import("lightningcss").TransformOptions, "code">} options
  *
- * @returns {Promise<string>} The optimized CSS.
+ * @returns {string} The optimized CSS.
  */
-async function optimizeCSS(input, options) {
+function optimizeCSS(input, options) {
   /**
    * @param {Buffer | Uint8Array} code
    */
@@ -136,8 +136,8 @@ async function handle(input, inputFile, basePath, options) {
     if (output !== previous.css) {
       const { ...transformOptions } = options ? options : defaultOptions;
       delete transformOptions.disableTransforms;
-      let optimizedCSS = await optimizeCSS(output, {
-        file: inputFile ?? "input.css",
+      let optimizedCSS = optimizeCSS(output, {
+        filename: inputFile ?? "input.css",
         ...transformOptions,
       });
       previous.css = output;
