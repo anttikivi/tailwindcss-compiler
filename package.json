@@ -20,7 +20,7 @@
     "src/index.d.ts"
   ],
   "scripts": {
-    "lint": "tsc"
+    "lint": "tsc && eslint ."
   },
   "dependencies": {
     "@tailwindcss/node": "^4.0.0-beta.6",
