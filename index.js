@@ -6,7 +6,6 @@ import { Scanner } from "@tailwindcss/oxide";
 import { Features, transform } from "lightningcss";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { eprintln } from "./renderer.js";
 
 /**
  * @typedef {Omit<import("lightningcss").TransformOptions, "filename" | "code">} NoInputTransformOptions
@@ -42,6 +41,13 @@ const defaultOptions = {
   },
   errorRecovery: true,
 };
+
+/**
+ * @param {string} value
+ */
+export function eprintln(value = "") {
+  process.stderr.write(`${value}\n`);
+}
 
 /**
  * @template T
