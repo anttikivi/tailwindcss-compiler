@@ -1,0 +1,19 @@
+{
+  "name": "@anttikivi/tailwindcss-compiler",
+  "version": "0.1.0-dev",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anttikivi/tailwindcss-compiler.git"
+  },
+  "author": "Antti Kivi <antti@anttikivi.fi> (https://www.anttikivi.fi)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anttikivi/tailwindcss-compiler/issues"
+  },
+  "homepage": "https://github.com/anttikivi/tailwindcss-compiler#readme"
+}
