@@ -19,3 +19,35 @@ Tailwind by default but lets you to specify your own options to Lightning CSS.
 It is possible to run Lightning CSS with custom options on the output of the
 Tailwind-provided compilers but, as fast as Lightning CSS is, it is inefficient
 to run it needlessly.
+
+## Getting started
+
+Install the package.
+
+    npm install -D tailwindcss-node-compiler
+
+The package exports two functions, `compile` and `compileFile`. As you would
+expect, `compile` compiles the given CSS and `compileFile` reads the CSS from a
+file and compiles that. For now, you need to write the output wherever you want
+to.
+
+### `compile`
+
+`compile` compiles CSS with Tailwind and optionally transforms it using
+Lightning CSS. The function returns the compiled CSS code. Please see
+[`index.d.ts`](index.d.ts) for the function type.
+
+### `compileFile`
+
+`compileFile` compiles a CSS file with Tailwind and optionally transforms it
+using Lightning CSS. The function returns the compiled CSS code. Please see
+[`index.d.ts`](index.d.ts) for the function type.
+
+## License
+
+This package is licensed under the MIT License. See [LICENSE](LICENSE) for more
+information.
+
+Parts of the code are adapted from
+[`tailwindlabs/tailwindcss`](https://github.com/tailwindlabs/tailwindcss),
+licensed under the MIT License. That code is copyright (c) Tailwind Labs, Inc.

@@ -1,11 +1,15 @@
 // Based on TailwindCSS.
 // Copyright (c) Tailwind Labs, Inc.
 
-import { compile } from "@tailwindcss/node";
+import { compile as _compile } from "@tailwindcss/node";
 import { Scanner } from "@tailwindcss/oxide";
 import { Features, transform } from "lightningcss";
 import fs from "node:fs/promises";
 import path from "node:path";
+
+const defaultInput = String.raw`
+@import "tailwindcss";
+`;
 
 /** @type {import("./index.d.ts").NoInputTransformOptions} */
 const defaultOptions = {
@@ -74,15 +78,11 @@ async function optimizeCSS(input, options) {
   return optimize(optimize(Buffer.from(input))).toString();
 }
 
-/** @type {import("./index.d.ts").compileTailwind} */
-export default async function compileTailwind(inputFile, basePath, options) {
+/** @type {import("./index.d.ts").handle} */
+async function handle(input, inputFile, basePath, options) {
   let base = basePath || process.cwd();
 
-  let inputCSS = inputFile
-    ? await fs.readFile(inputFile, "utf-8")
-    : String.raw`
-        @import "tailwindcss";
-      `;
+  let inputCSS = input;
 
   /** @type {import("./index.d.ts").Previous} */
   let previous = {
@@ -99,8 +99,8 @@ export default async function compileTailwind(inputFile, basePath, options) {
   let fullRebuildPaths = inputFilePath ? [inputFilePath] : [];
 
   let [compiler, scanner] = await handleError(
-    /** @type {() => [ReturnType<typeof compile>, Scanner] as const} */ async () => {
-      let compiler = await compile(inputCSS, {
+    /** @type {() => [ReturnType<typeof _compile>, Scanner] as const} */ async () => {
+      let compiler = await _compile(inputCSS, {
         base: inputBasePath,
         onDependency(path) {
           fullRebuildPaths.push(path);
@@ -149,4 +149,19 @@ export default async function compileTailwind(inputFile, basePath, options) {
   }
 
   return output;
+}
+
+/** @type {import("./index.d.ts").compile} */
+export async function compile(input, basePath, options) {
+  return await handle(input || defaultInput, null, basePath, options);
+}
+
+/** @type {import("./index.d.ts").compileFile} */
+export async function compileFile(inputFile, basePath, options) {
+  return await handle(
+    inputFile ? await fs.readFile(inputFile, "utf-8") : defaultInput,
+    inputFile,
+    basePath,
+    options,
+  );
 }
