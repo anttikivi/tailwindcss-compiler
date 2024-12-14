@@ -7,8 +7,6 @@ test("compiles CSS", async () => {
       String.raw`
 @import "tailwindcss";
 `,
-      null,
-      null,
     ),
   ).not.toBeFalsy();
 });

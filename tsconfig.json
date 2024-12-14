@@ -1,10 +1,25 @@
 {
-  "include": ["index.js", "*.d.ts"],
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "lib": ["ES2020"],
-    "moduleResolution": "node",
+    "target": "es2022",
+    "lib": ["es2022", "esnext.disposable", "dom"],
+
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "allowJs": true,
+
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
     "isolatedModules": true,
+    "preserveConstEnums": true,
     "noEmit": true,
-    "strict": true
-  }
+
+    "skipLibCheck": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
 }
