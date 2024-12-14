@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.3.0] - 2024-12-14
+
 ### Added
 
 - Separate exports for types, CommonJS, and modules.
@@ -41,7 +43,9 @@ and this project adheres to
   files.
 
 [unreleased]:
-  https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.2.0...HEAD
+  https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.3.0...HEAD
+[0.3.0]:
+  https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.2.0...v0.3.0
 [0.2.0]:
   https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.1.1...v0.2.0
 [0.1.1]:

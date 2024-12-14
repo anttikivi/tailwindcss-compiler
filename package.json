@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-node-compiler",
-  "version": "0.3.0-dev",
+  "version": "0.3.0",
   "description": "",
   "homepage": "https://github.com/anttikivi/tailwindcss-node-compiler#readme",
   "bugs": {
