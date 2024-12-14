@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-node-compiler",
-  "version": "0.3.0",
+  "version": "0.4.0-dev",
   "description": "",
   "homepage": "https://github.com/anttikivi/tailwindcss-node-compiler#readme",
   "bugs": {
@@ -28,6 +28,7 @@
   "scripts": {
     "build": "tsup index.ts",
     "lint": "tsc && eslint .",
+    "prepack": "rm -rf dist && npm run build",
     "test": "vitest run"
   },
   "dependencies": {

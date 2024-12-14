@@ -8,6 +8,11 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- `prepack` script to ensure that the latest release is build before packing and
+  publishing.
+
 ## [0.3.0] - 2024-12-14
 
 ### Added
