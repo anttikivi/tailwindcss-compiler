@@ -8,6 +8,14 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- Separate exports for types, CommonJS, and modules.
+
+### Changed
+
+- Project now uses TypeScript.
+
 ## [0.2.0] - 2024-12-14
 
 ### Added
