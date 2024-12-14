@@ -1,7 +1,7 @@
 {
   "name": "tailwindcss-node-compiler",
   "version": "0.4.0-dev",
-  "description": "",
+  "description": "Compiler for Tailwind with a Node.js API",
   "homepage": "https://github.com/anttikivi/tailwindcss-node-compiler#readme",
   "bugs": {
     "url": "https://github.com/anttikivi/tailwindcss-node-compiler/issues"
