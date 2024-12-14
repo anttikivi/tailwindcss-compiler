@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.3.1] - 2024-12-14
+
 ### Added
 
 - `prepack` script to ensure that the latest release is build before packing and
@@ -48,7 +50,9 @@ and this project adheres to
   files.
 
 [unreleased]:
-  https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.3.0...HEAD
+  https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.3.1...HEAD
+[0.3.1]:
+  https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.3.0...v0.3.1
 [0.3.0]:
   https://github.com/anttikivi/tailwindcss-node-compiler/compare/v0.2.0...v0.3.0
 [0.2.0]:
