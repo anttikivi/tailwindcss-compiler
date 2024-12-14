@@ -20,8 +20,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "main": "index.js",
-  "types": "index.d.ts",
   "files": [
     "dist/"
   ],

@@ -8,6 +8,11 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Removed
+
+- `main` and `types` keys from `package.json` as it also has `exports` key which
+  is preferred.
+
 ## [0.3.1] - 2024-12-14
 
 ### Added
