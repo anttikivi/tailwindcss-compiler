@@ -35,13 +35,13 @@ to.
 
 `compile` compiles CSS with Tailwind and optionally transforms it using
 Lightning CSS. The function returns the compiled CSS code. Please see
-[`index.d.ts`](index.d.ts) for the function type.
+[`index.ts`](index.ts) for the function type.
 
 ### `compileFile`
 
 `compileFile` compiles a CSS file with Tailwind and optionally transforms it
 using Lightning CSS. The function returns the compiled CSS code. Please see
-[`index.d.ts`](index.d.ts) for the function type.
+[`index.ts`](index.ts) for the function type.
 
 ## License
 
